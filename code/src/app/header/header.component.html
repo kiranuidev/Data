@@ -1,0 +1,45 @@
+
+
+
+<nav class="navbar navbar-default">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">  {{title}}  </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul  class="nav navbar-nav">
+
+            <li (click)="LoadPage(tab)"  *ngFor="let tab of tabs"> 
+                <a href="#">{{tab}}</a> </li>               
+
+        </ul>
+          
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="selectedTab=='Home'" >   <app-home></app-home>  </div>
+<div *ngIf="selectedTab=='Login'"> <app-login></app-login> </div>
+<div *ngIf="selectedTab=='Products'">    
+    <div class="col-md-8">
+    <app-products> </app-products> 
+    </div>
+    <div class="col-md-4">
+    <app-kart> </app-kart> 
+    </div>
+
+    
+</div>
+<div *ngIf="selectedTab=='Register'"> <app-register> </app-register> </div>
